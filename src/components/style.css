@@ -1,0 +1,43 @@
+/* Modal */
+
+.modalWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+    background-color: rgba(255, 255, 255, 0.897);
+    padding: 35px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modalContent h3 {
+    color: black;
+}
+
+.modalContent button {
+    color: black;
+    border: 1px solid purple;
+}
+
+/* Loader */
+
+.loader {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 40px auto;
+}
+
+

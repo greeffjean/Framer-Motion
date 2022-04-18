@@ -1,32 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
-/*
-Creating animation variants for framer motion.
-**/
-const containerVariants = {
-  hidden: {
-    transform: "scale(1.5)",
-    opacity: 0,
-  },
-  visible: {
-    transform: "scale(1.0)",
-    opacity: 1,
-  },
-};
-
-const buttonVariants = {
-  hidden: {
-    x: "20vw",
-    opacity: 0,
-  },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: { type: "spring" },
-  },
-};
+import { containerVariants, buttonVariants } from "../utils/framer-motion-variants/variants";
 
 const Base = ({ addBase, pizza }) => {
   const bases = ["Classic", "Thin & Crispy", "Thick Crust"];
@@ -37,6 +12,7 @@ const Base = ({ addBase, pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
       <h3>Step 1: Choose Your Base</h3>
       <ul>
@@ -67,11 +43,8 @@ const Base = ({ addBase, pizza }) => {
         >
           <Link to="/toppings">
             <motion.button
-              whileHover={{
-                scale: 1.1,
-                boxShadow: "0px 0px 3px rgb(250, 250, 250)",
-                textShadow: "0px 0px 3px rgb(250, 250, 250)",
-              }}
+            variants={buttonVariants}
+            whileHover="hover"
             >
               Next
             </motion.button>
